@@ -16,6 +16,7 @@ use App\Http\Controllers\MakerController;
 
 Route::resource('makers',MakerController::class);
 
+
 /*Route::get('/', function () {
     return view('welcome');
 });*/

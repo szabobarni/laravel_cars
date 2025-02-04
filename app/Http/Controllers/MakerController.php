@@ -58,7 +58,8 @@ class MakerController extends Controller
      */
     public function edit($id)
     {
-        //
+        $makers = Maker::find($id);
+        return view('makers.edit', compact('makers'));
     }
 
     /**
