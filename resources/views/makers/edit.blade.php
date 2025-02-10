@@ -1,9 +1,17 @@
 @extends('layout')
 
 @section('content')
-<h1>Gyártók</h1>
-<div>
-    <!-- Happiness is not something readymade. It comes from your own actions. - Dalai Lama -->
-   
-</div>
+    <div>
+        <!-- Simplicity is the ultimate sophistication. - Leonardo da Vinci -->
+        <form action="{{ route('makers.update', $maker->id) }}" method="post">
+            @csrf
+            @method('PATCH')
+            <fieldset>
+                <label for="name">Megnevezés</label>
+                <input type="text" id="name" name="name" required value="{{ old('name', $maker->name) }}">
+            </fieldset>
+            <button type="submit">Ment</button>
+            <a href="{{ route('makers.index') }}">Mégse</a>
+        </form>
+    </div>
 @endsection

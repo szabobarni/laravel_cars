@@ -9,8 +9,8 @@
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="{{ asset('js/jquery-3.7.1.js') }}"></script>
     <!-- Styles -->
-    <link rel="stylesheet" href="{{ asset('/css/app.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('/fontawesome/css/all.css') }}" >
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('fontawesome/css/all.css') }}" >
 
     <link rel="shortcut icon" href="{{ asset('favicon.png') }}" type="image/x-icon">
 </head>
@@ -21,7 +21,7 @@
             <!-- Act only according to that maxim whereby you can, at the same time, will that it should become a universal law. - Immanuel Kant -->
         </div>
         <div class="row">
-            <img src="{{ asset('img/yellow-car.jpg') }}" alt="logo" width="175" height="100">
+            <img src="{{ asset('img/yellow-car.png') }}" alt="logo" width="175" height="175">
             <nav>
                 <ul>
                     
