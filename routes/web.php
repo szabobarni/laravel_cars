@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MakerController;
+use App\Http\Controllers\BodyController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,6 +16,7 @@ use App\Http\Controllers\MakerController;
 */
 
 Route::resource('makers',MakerController::class);
+Route::resource('bodies',BodyController::class);
 
 
 /*Route::get('/', function () {

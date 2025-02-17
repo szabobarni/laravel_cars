@@ -26,6 +26,7 @@
                 <ul>
                     
                     <li><a href="{{ route('makers.index') }}">Gyártók</a></li> 
+                    <li><a href="{{ route('bodies.index') }}">Karosszériák</a></li>
 
                 </ul>
             </nav>
