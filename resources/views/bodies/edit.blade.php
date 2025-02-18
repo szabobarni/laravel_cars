@@ -13,7 +13,7 @@
                 <input type="text" id="name" name="name" required value="{{ old('name', $body->name) }}">
             </fieldset>
             <button type="submit">Ment</button>
-            <a href="{{ route('bodies.index') }}"><button>Mégse</button></a>
         </form>
+        <a href="{{ route('bodies.index') }}"><button>Mégse</button></a>
     </div>
 @endsection
