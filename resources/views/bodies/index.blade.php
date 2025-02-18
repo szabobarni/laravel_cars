@@ -3,8 +3,7 @@
 @section('content')
 <h1>Karosszériák</h1>
 <div>
-    <!-- Happiness is not something readymade. It comes from your own actions. - Dalai Lama -->
-    <a href="{{ route('makers.create') }}" title="Új"><button><i class="fa fa-plus plus" title="Módosít"></i></button></a> 
+    <a href="{{ route('bodies.create') }}" title="Új"><button><i class="fa fa-plus plus" title="Módosít"></i></button></a> 
     <br><br>
 	@foreach($bodies as $body)
 		<div class="row {{ $loop->iteration % 2 == 0 ? 'even' : 'odd' }}">

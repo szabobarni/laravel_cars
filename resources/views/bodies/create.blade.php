@@ -10,7 +10,7 @@
             <input type="text" id="name" name="name">
         </fieldset>
         <button type="submit">Ment</button>
-        <a href="{{ route('bodies.index') }}">Mégse</a>
+        <a href="{{ route('bodies.index') }}"><button>Mégse</button></a>
     </form>
 </div>
 @endsection
