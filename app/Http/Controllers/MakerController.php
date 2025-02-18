@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\BasicRequest;
 use App\Models\Maker;
 use Illuminate\Http\Request;
 
@@ -34,7 +35,7 @@ class MakerController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(BasicRequest $request)
     {
         $maker  = new Maker();
         $maker->name = $request->input('name');
@@ -74,7 +75,7 @@ class MakerController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function update(Request $request, $id)
+    public function update(BasicRequest $request, $id)
     {
         $maker = Maker::find($id);
         $maker->name = $request->input('name');

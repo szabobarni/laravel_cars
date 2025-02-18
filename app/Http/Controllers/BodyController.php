@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\BasicRequest;
 use App\Models\Body;
 use Illuminate\Http\Request;
 
@@ -37,7 +38,7 @@ class BodyController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(BasicRequest $request)
     {
         $body  = new Body();
         $body->name = $request->input('name');
@@ -77,7 +78,7 @@ class BodyController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(BasicRequest $request, $id)
     {
         $body = Body::find($id);
         $body->name = $request->input('name');
