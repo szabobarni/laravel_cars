@@ -98,6 +98,6 @@ class BodyController extends Controller
         $body = Body::find($id);
         $body->delete();
 
-        return redirect()->route('bodies.index')->with('success', "sikeresen törölve");
+        return redirect()->route('bodies.index')->with('success', "{$body->name} sikeresen törölve");
     }
 }

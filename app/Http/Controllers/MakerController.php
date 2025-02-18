@@ -81,7 +81,7 @@ class MakerController extends Controller
         $maker->name = $request->input('name');
         $maker->save();
 
-        return redirect()->route('makers.index')->with('success', "{$maker->name} sikeresen módosítva");
+        return redirect()->route('makers.index')->with('alert', "{$maker->name} sikeresen módosítva");
     }
 
     /**
@@ -95,6 +95,6 @@ class MakerController extends Controller
         $maker = Maker::find($id);
         $maker->delete();
 
-        return redirect()->route('makers.index')->with('success', "sikeresen törölve");
+        return redirect()->route('makers.index')->with('success', "{$maker->name} sikeresen törölve");
     }
 }

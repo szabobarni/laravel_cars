@@ -2,7 +2,9 @@
 
 @section('content')
     <div>
-        <!-- Simplicity is the ultimate sophistication. - Leonardo da Vinci -->
+        @error('name')
+            <div class="alert alert-warning">{{ $message }}</div>
+        @enderror
         <form action="{{ route('bodies.update', $body->id) }}" method="post">
             @csrf
             @method('PATCH')

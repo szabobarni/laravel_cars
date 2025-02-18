@@ -4,8 +4,10 @@
 <h1>Gyártók</h1>
 <div>
     <!-- Happiness is not something readymade. It comes from your own actions. - Dalai Lama -->
-    
     <a href="{{ route('makers.create') }}" title="Új"><button><i class="fa fa-plus plus" title="Módosít"></i></button></a> 
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
     <br><br>
         @foreach($makers as $maker)
             <li class="row {{ $loop->iteration % 2 == 0 ? 'even' : 'odd' }}">
@@ -15,6 +17,9 @@
                         <div class="col">
                             <a href="{{ route('makers.edit', $maker->id) }}"><button><i class="fa fa-edit edit" title="Módosít"></i></button></a>
                         </div>
+                        @if(session('success'))
+                        
+                        @endif
                         <div class="col">
                             <form action="{{ route('makers.destroy', $maker->id) }}" method="POST">
                                 @csrf
