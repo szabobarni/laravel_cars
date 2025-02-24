@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Maker;
 use Illuminate\Database\Seeder;
 use App\Models\Model;
 
@@ -10,7 +10,11 @@ class ModelsSeeder extends Seeder
 {
 
     const ITEMS = [
-        "S40",
+        'BMW'=>['I8','M5'],
+        'Audi'=>['A4','TT'],
+        'Mercedes'=>['SLS','C-class'],
+        'Ford'=>['Focus','Fiesto'],
+        'Volvo'=>['S40','V40'],
     ];
 
     /**
@@ -20,11 +24,16 @@ class ModelsSeeder extends Seeder
      */
     public function run()
     {
-        foreach (self::ITEMS as $item)
+        foreach (self::ITEMS as $key => $makers) 
         {
-            $model=new Model();
-            $model->name=$item;
-            $model->save();
+            foreach ($makers as $item) 
+            {
+                $maker = Maker::where(['name' => $item]);
+                $model= new Model();
+                $model->maker_id=$maker->id;
+                $model->name= $item;
+                $model->save();
+            }
         }
     }
 }

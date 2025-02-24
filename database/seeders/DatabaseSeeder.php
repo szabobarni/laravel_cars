@@ -22,7 +22,7 @@ class DatabaseSeeder extends Seeder
         // ]);
         $this->call([
             MakersSeeder::class,
-            //ModelsSeeder::class,
+            ModelsSeeder::class,
             BodiesSeeder::class,
         ]);
     }
