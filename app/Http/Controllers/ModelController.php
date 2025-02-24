@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\BasicRequest;
+use App\Models\Model;
 use Illuminate\Http\Request;
 
 class ModelController extends Controller
@@ -13,7 +15,8 @@ class ModelController extends Controller
      */
     public function index()
     {
-        //
+        $models = Model::all();
+        return view('models.index', compact('models'));
     }
 
     /**
@@ -23,7 +26,7 @@ class ModelController extends Controller
      */
     public function create()
     {
-        //
+        return view('models.create');
     }
 
     /**
@@ -32,9 +35,13 @@ class ModelController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(BasicRequest $request)
     {
-        //
+        $model  = new Model();
+        $model->name = $request->input('name');
+        $model->save();
+
+        return redirect()->route('models.index')->with('success', "{$model->name} sikeresen létrehozva");
     }
 
     /**
@@ -56,7 +63,8 @@ class ModelController extends Controller
      */
     public function edit($id)
     {
-        //
+        $model = Model::find($id);
+        return view('models.edit', compact('model'));
     }
 
     /**
@@ -66,9 +74,13 @@ class ModelController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(BasicRequest $request, $id)
     {
-        //
+        $model = Model::find($id);
+        $model->name = $request->input('name');
+        $model->save();
+
+        return redirect()->route('modles.index')->with('alert', "{$model->name} sikeresen módosítva");
     }
 
     /**
@@ -79,6 +91,9 @@ class ModelController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $model = Model::find($id);
+        $model->delete();
+
+        return redirect()->route('models.index')->with('success', "{$model->name} sikeresen törölve");
     }
 }
