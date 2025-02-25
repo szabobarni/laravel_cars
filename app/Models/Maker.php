@@ -17,8 +17,8 @@ class Maker extends EloquentModel
         return $this->hasMany(Model::class);
     }
 
-    public function vehicles()
+    /*public function vehicles()
     {
         return $this->hasMany(Vehicle::class);
-    }
+    }*/
 }

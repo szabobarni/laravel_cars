@@ -18,8 +18,8 @@ class Model extends EloquentModel
         return $this->belongsTo(Maker::class);
     }
 
-    public function vehicles()
+    /*public function vehicles()
     {
         return $this->hasMany(Vehicle::class);
-    }
+    }*/
 }

@@ -24,14 +24,14 @@ class ModelsSeeder extends Seeder
      */
     public function run()
     {
-        foreach (self::ITEMS as $key => $makers) 
+        foreach (self::ITEMS as $key => $models) 
         {
-            foreach ($makers as $item) 
+            foreach ($models as $item) 
             {
-                $maker = Maker::where(['name' => $item]);
+                $maker = Maker::where(['name' => $key])->first();
                 $model= new Model();
-                $model->maker_id=$maker->id;
                 $model->name= $item;
+                $model->maker_id=$maker->id;               
                 $model->save();
             }
         }

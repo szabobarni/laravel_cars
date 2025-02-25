@@ -24,6 +24,7 @@ class DatabaseSeeder extends Seeder
             MakersSeeder::class,
             ModelsSeeder::class,
             BodiesSeeder::class,
+            FuelsSeeder::class,
         ]);
     }
 }

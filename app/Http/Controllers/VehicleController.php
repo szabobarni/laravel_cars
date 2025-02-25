@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\BasicRequest;
-use App\Models\Fuel;
+use App\Models\Vehicle;
 use Illuminate\Http\Request;
 
-class FuelController extends Controller
+class VehicleController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,8 @@ class FuelController extends Controller
      */
     public function index()
     {
-        $fuels = Fuel::all();
-        return view('fuels.index', compact('fuels'));
+        $vehicles = Vehicle::all();
+        return view('vehicles.index', compact('vehicles'));
     }
 
     /**
@@ -26,7 +26,7 @@ class FuelController extends Controller
      */
     public function create()
     {
-        return view('fuels.create');
+        return view('vehicles.create');
     }
 
     /**
@@ -37,11 +37,11 @@ class FuelController extends Controller
      */
     public function store(BasicRequest $request)
     {
-        $fuel  = new fuel();
-        $fuel->name = $request->input('name');
-        $fuel->save();
+        $vehicle  = new Vehicle();
+        $vehicle->name = $request->input('name');
+        $vehicle->save();
 
-        return redirect()->route('fuels.index')->with('success', "{$fuel->name} sikeresen létrehozva");
+        return redirect()->route('vehicles.index')->with('success', "{$vehicle->name} sikeresen létrehozva");
     }
 
     /**
@@ -63,8 +63,8 @@ class FuelController extends Controller
      */
     public function edit($id)
     {
-        $fuel = fuel::find($id);
-        return view('fuels.edit', compact('fuel'));
+        $vehicle = Vehicle::find($id);
+        return view('vehicles.edit', compact('vehicle'));
     }
 
     /**
@@ -76,11 +76,11 @@ class FuelController extends Controller
      */
     public function update(BasicRequest $request, $id)
     {
-        $fuel  = fuel::find($id);
-        $fuel->name = $request->input('name');
-        $fuel->save();
+        $vehicle  = vehicle::find($id);
+        $vehicle->name = $request->input('name');
+        $vehicle->save();
 
-        return redirect()->route('fuels.index')->with('success', "{$fuel->name} sikeresen módosítva");
+        return redirect()->route('vehicles.index')->with('success', "{$vehicle->name} sikeresen módosítva");
     }
 
     /**
@@ -91,9 +91,9 @@ class FuelController extends Controller
      */
     public function destroy($id)
     {
-        $fuel  = fuel::find($id);
-        $fuel->delete();
+        $vehicle  = vehicle::find($id);
+        $vehicle->delete();
 
-        return redirect()->route('fuels.index')->with('success', "{$fuel->name} sikeresen törölve");
+        return redirect()->route('vehicles.index')->with('success', "{$vehicle->name} sikeresen törölve");
     }
 }

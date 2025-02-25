@@ -24,8 +24,10 @@
             <img src="{{ asset('img/yellow-car.png') }}" alt="logo" width="175" height="175">
             <nav>
                 <ul>
+                    <li><a href="{{ route('vehicles.index') }}">Járművek</a></li> 
                     <li><a href="{{ route('makers.index') }}">Gyártók</a></li> 
                     <li><a href="{{ route('bodies.index') }}">Karosszériák</a></li>
+                    <li><a href="{{ route('fuels.index') }}">Üzemanyagok</a></li> 
 
                 </ul>
             </nav>

@@ -16,7 +16,7 @@
 						<form action="{{ route('bodies.destroy', $body->id) }}" method="POST">
 							@csrf
 							@method('DELETE')
-							<button type="submit" name="btn-del-fuel"><i class="fa fa-trash" title="Töröl"></i></button>
+							<button type="submit" name="btn-del-body"><i class="fa fa-trash" title="Töröl"></i></button>
 						</form>
 					</div>
 			</div>
