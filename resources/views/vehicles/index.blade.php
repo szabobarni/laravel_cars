@@ -11,9 +11,10 @@
         @foreach($vehicles as $vehicle)
             <li class="row {{ $loop->iteration % 2 == 0 ? 'even' : 'odd' }}">
                 <div class="col id">{{ $vehicle->id }}</div>
-                <div class="col">{{$vehicle->name}}</div>
+                <div class="col">{{$vehicle->license_plate}}</div>
                 <div class="right">
                         <div class="col">
+                            <div class="col"><a href="{{ route('vehicles.show', $vehicle->id) }}"><button><i class="fa fa-binoculars" title="Mutat"></i></button></a></div>
                             <a href="{{ route('vehicles.edit', $vehicle->id) }}"><button><i class="fa fa-edit edit" title="Módosít"></i></button></a>
                         </div>
                         @if(session('success'))

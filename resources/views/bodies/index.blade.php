@@ -10,7 +10,6 @@
 			<div class="col id">{{ $body->id }}</div>
 			<div class="col">{{$body->name}}</div>
 			<div class="right">
-				<div class="col"><a href="{{ route('bodies.show', $body->id) }}"><button><i class="fa fa-binoculars" title="Mutat"></i></button></a></div>
 					<div class="col"><a href="{{ route('bodies.edit', $body->id) }}"><button><i class="fa fa-edit edit" title="Módosít"></i></button></a></div>
 					<div class="col">
 						<form action="{{ route('bodies.destroy', $body->id) }}" method="POST">
