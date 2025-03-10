@@ -64,7 +64,12 @@ class VehicleController extends Controller
      */
     public function show($id)
     {
-        //
+        $vehicle = Vehicle::find($id);
+        $makers = Maker::all();
+        $models = Model::all();
+        $bodies = Body::all();
+        $fuels = Fuel::all();
+        return view('vehicles.show',compact('vehicle','makers','models','bodies','fuels'));
     }
 
     /**
